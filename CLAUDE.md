@@ -18,7 +18,8 @@ construction/
 │   └── core/                 # Business intelligence files
 │       ├── business-profile.json
 │       ├── voice-dna.json
-│       └── icp.json
+│       ├── icp.json
+│       └── design-dna.json
 ├── knowledge/
 │   ├── drafts/               # Work-in-progress content
 │   ├── published/            # Final published content
@@ -61,6 +62,19 @@ Start by completing the files in `context/core/`:
 - `education` - Learning and training materials
 - `meta` - Skill creation and management
 - `research` - Research workflows
+
+## Design Philosophy
+This project follows a **dark + yellow industrial aesthetic**. Full design specifications are in `context/core/design-dna.json`. Always read that file before creating or modifying UI components.
+
+**Key principles:**
+- Dark (#1a1a1a) base with yellow (#FFC000) power accents
+- Plus Jakarta Sans headings (700-800 weight), Inter body text
+- Yellow corner bracket decorations on featured images (::before/::after)
+- Uppercase CTAs with 0.5px letter-spacing
+- 0.3s ease transitions, translateY hover lifts, scroll reveal animations
+- Alternating dark/light sections - never stack more than 2 same-tone sections
+- Grid-based layouts, 1200px container, responsive at 1024/768/480px breakpoints
+- Avoid soft/playful elements, pastels, or overly complex animations
 
 ## Current Phase
 Phase 0: Project initialization complete. Ready for development.

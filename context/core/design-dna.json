@@ -1,0 +1,221 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "created": "2026-02-11",
+    "updated": "2026-02-11",
+    "source": "construct01/index.html",
+    "description": "Design system preferences for the BuildRight construction project. Claude reads this file automatically when creating or modifying UI components."
+  },
+
+  "colors": {
+    "css_variables": {
+      "--dark": "#1a1a1a",
+      "--dark-charcoal": "#2a2a2a",
+      "--dark-surface": "#333333",
+      "--dark-card": "#2f2f2f",
+      "--dark-gray": "#4a4a4a",
+      "--yellow": "#FFC000",
+      "--yellow-hover": "#e6ac00",
+      "--yellow-light": "#FFD700",
+      "--white": "#ffffff",
+      "--light-gray": "#f5f5f5",
+      "--medium-gray": "#e0e0e0",
+      "--text-muted": "#999999",
+      "--text-body": "#cccccc"
+    },
+    "usage_rules": {
+      "backgrounds": "Alternate dark (#1a1a1a, #2a2a2a) sections with light (#ffffff, #f5f5f5) sections",
+      "accent": "Yellow (#FFC000) for CTAs, icons, section labels, decorative borders, and emphasis",
+      "text_on_dark": "White for headings, #cccccc for body, #999999 for muted",
+      "text_on_light": "Dark (#1a1a1a) for headings, #4a4a4a for body",
+      "hover_shadows": "rgba(255, 192, 0, 0.35) for yellow elements, rgba(0, 0, 0, 0.3) for dark elements"
+    }
+  },
+
+  "typography": {
+    "fonts": {
+      "heading": "'Plus Jakarta Sans', 'Inter', sans-serif",
+      "body": "'Inter', sans-serif",
+      "icon": "Material Symbols Outlined"
+    },
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
+    "weights": {
+      "heading": [700, 800],
+      "body": [400, 500, 600],
+      "button": 600,
+      "label": 600
+    },
+    "line_heights": {
+      "heading": 1.2,
+      "body": 1.6
+    },
+    "responsive_sizing": {
+      "h1": "clamp(40px, 5vw, 64px)",
+      "h2": "36px-42px",
+      "h3": "20px-24px",
+      "body": "16px",
+      "small": "13px-14px",
+      "label": "13px"
+    },
+    "patterns": {
+      "section_label": "13px, uppercase, 3px letter-spacing, yellow color, with 30px yellow line ::before",
+      "cta_text": "15px, uppercase, 0.5px letter-spacing, font-weight 600"
+    }
+  },
+
+  "spacing": {
+    "css_variables": {
+      "--section-pad": "80px 0",
+      "--container": "1200px",
+      "--radius": "8px",
+      "--radius-lg": "12px"
+    },
+    "container": {
+      "max_width": "1200px",
+      "padding": "0 24px"
+    },
+    "section_padding": {
+      "desktop": "80px 0",
+      "mobile": "60px 0"
+    },
+    "card_padding": {
+      "standard": "32px 24px",
+      "large": "32px 28px"
+    },
+    "grid_gaps": {
+      "standard": "24px",
+      "stats": "48px",
+      "large_content": "60px"
+    }
+  },
+
+  "layout": {
+    "approach": "CSS Grid for main layouts, Flexbox for inline/nav elements",
+    "grid_columns": {
+      "4_col": "repeat(4, 1fr)",
+      "3_col": "repeat(3, 1fr)",
+      "2_col": "repeat(2, 1fr)",
+      "content_split": "1fr 1fr"
+    },
+    "breakpoints": {
+      "desktop": "1024px",
+      "tablet": "768px",
+      "mobile": "480px"
+    },
+    "responsive_behavior": {
+      "1024px": "4-col grids become 3-col, 2-col content splits stack",
+      "768px": "Section padding reduces to 60px, grids become 1-2 col, mobile nav activates",
+      "480px": "Single column layouts, reduced font sizes, simplified spacing"
+    }
+  },
+
+  "components": {
+    "buttons": {
+      "base": "padding: 14px 32px, font-size: 15px, font-weight: 600, uppercase, 0.5px letter-spacing, border-radius: 8px",
+      "variants": {
+        "btn-yellow": "bg: #FFC000, color: #1a1a1a, hover: translateY(-2px) + shadow rgba(255,192,0,0.35)",
+        "btn-outline": "bg: transparent, border: 2px solid white, hover: bg white + color dark",
+        "btn-dark": "bg: #2a2a2a, color: white, hover: bg #1a1a1a + translateY(-2px)"
+      }
+    },
+    "cards": {
+      "dark_card": "bg: #2f2f2f, border: 1px solid rgba(255,255,255,0.05), padding: 32px 24px, border-radius: 12px, hover: border-color yellow rgba",
+      "light_card": "bg: white, padding: 32px 24px, border-radius: 12px, box-shadow on hover"
+    },
+    "section_label": {
+      "style": "13px, font-weight 600, uppercase, letter-spacing 3px, color: yellow",
+      "decoration": "30px x 2px yellow line before text via ::before pseudo-element"
+    },
+    "header": {
+      "style": "Fixed position, bg: #1a1a1a, height: 80px, z-index: 1000",
+      "scrolled": "bg: rgba(26,26,26,0.97), box-shadow, backdrop-filter: blur(10px)"
+    }
+  },
+
+  "decorative_elements": {
+    "corner_brackets": {
+      "description": "Yellow corner brackets on featured images using ::before and ::after pseudo-elements",
+      "css": {
+        "before": "top: -12px, left: -12px, width: 100px, height: 100px, border-top: 4px solid var(--yellow), border-left: 4px solid var(--yellow)",
+        "after": "bottom: -12px, right: -12px, width: 100px, height: 100px, border-bottom: 4px solid var(--yellow), border-right: 4px solid var(--yellow)"
+      },
+      "applied_to": ["about-image", "contact-image", "testimonial featured images"]
+    },
+    "experience_badge": {
+      "description": "Absolute-positioned badge with yellow background showing years of experience",
+      "style": "position: absolute, bg: yellow, padding, bold text, z-index above image"
+    },
+    "hero_badge": {
+      "description": "Inline-flex badge with rgba yellow background and yellow border",
+      "style": "display: inline-flex, bg: rgba yellow, border: 1px solid yellow, border-radius"
+    }
+  },
+
+  "animations": {
+    "css_variable": "--transition: all 0.3s ease",
+    "hover_effects": {
+      "lift": "transform: translateY(-2px) to translateY(-8px)",
+      "shadow": "box-shadow appears/intensifies on hover",
+      "scale": "transform: scale(1.08) on project card images",
+      "border_glow": "border-color transitions to yellow rgba on card hover"
+    },
+    "scroll_reveal": {
+      "method": "IntersectionObserver API",
+      "initial_state": "opacity: 0, transform: translateY(30px)",
+      "revealed_state": "opacity: 1, transform: translateY(0)",
+      "transition": "opacity 0.6s ease, transform 0.6s ease"
+    },
+    "scrolling_banner": {
+      "type": "@keyframes scrollBanner",
+      "duration": "20s linear infinite"
+    },
+    "mobile_nav": {
+      "closed": "transform: translateX(100%)",
+      "open": "transform: translateX(0)",
+      "transition": "0.3s ease"
+    }
+  },
+
+  "image_treatment": {
+    "standard": "border-radius: var(--radius-lg) (12px), object-fit: cover",
+    "featured": "box-shadow: 0 20px 60px rgba(0,0,0,0.3), corner bracket decorations",
+    "project_cards": "aspect-ratio: 4/3, hover: scale(1.08)",
+    "avatar": "border-radius: 50%, border: 2px solid var(--yellow), 52px x 52px"
+  },
+
+  "section_patterns": {
+    "alternating_rhythm": [
+      { "type": "dark", "bg": "var(--dark)", "example": "hero" },
+      { "type": "dark", "bg": "var(--dark-charcoal)", "example": "hero-cards" },
+      { "type": "light", "bg": "var(--white)", "example": "about" },
+      { "type": "light", "bg": "var(--light-gray)", "example": "services" },
+      { "type": "dark", "bg": "var(--dark)", "example": "workflow" },
+      { "type": "light", "bg": "var(--white)", "example": "projects" },
+      { "type": "accent", "bg": "var(--yellow)", "example": "scrolling banner" },
+      { "type": "dark", "bg": "var(--dark)", "example": "testimonials" }
+    ],
+    "rule": "Never stack more than 2 same-tone sections. Accent (yellow) sections break up the rhythm."
+  },
+
+  "design_philosophy": {
+    "aesthetic": "Bold industrial, professional, modern",
+    "tone": "Strength, reliability, and precision through strong contrasts and clean lines",
+    "principles": [
+      "Dark-dominant aesthetic with yellow as power accent",
+      "Generous spacing and breathing room between elements",
+      "Grid-based layouts for structural consistency",
+      "Corner bracket decorations on key images for industrial feel",
+      "Uppercase CTAs with letter-spacing for authority",
+      "Subtle hover animations (lift + shadow) for interactivity",
+      "Mobile-first responsive approach",
+      "Accessibility: ARIA labels, reduced-motion support, semantic HTML"
+    ],
+    "avoid": [
+      "Rounded/soft/playful design elements",
+      "Pastel or muted color palettes",
+      "Overly complex animations or parallax effects",
+      "More than 3 font weights on a single page",
+      "Decorative elements that don't serve a structural purpose"
+    ]
+  }
+}
