@@ -1,0 +1,2595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brokuz Construction - Built With Strength And Precision</title>
+  <meta name="description" content="Brokuz Construction delivers expert modern construction services and solutions with 29+ years of experience. Residential, commercial, and industrial projects built with precision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       CSS CUSTOM PROPERTIES
+    ======================================== */
+    :root {
+      --dark: #1a1a1a;
+      --dark-charcoal: #2a2a2a;
+      --dark-surface: #333333;
+      --dark-card: #2f2f2f;
+      --dark-gray: #4a4a4a;
+      --yellow: #FFC000;
+      --yellow-hover: #e6ac00;
+      --yellow-light: #FFD700;
+      --white: #ffffff;
+      --light-gray: #f5f5f5;
+      --medium-gray: #e0e0e0;
+      --text-muted: #999999;
+      --text-body: #cccccc;
+      --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --section-pad: 80px 0;
+      --container: 1200px;
+      --transition: all 0.3s ease;
+    }
+
+    /* ========================================
+       RESET & BASE
+    ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul { list-style: none; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .yellow-text { color: var(--yellow); }
+
+    /* Material Symbols base styling */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .icon-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--yellow);
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background: var(--yellow);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn .material-symbols-outlined {
+      font-size: 20px;
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--dark);
+    }
+
+    .btn-yellow:hover {
+      background: var(--yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 192, 0, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--dark);
+    }
+
+    .btn-dark {
+      background: var(--dark-charcoal);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================
+       HEADER / NAV
+    ======================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--dark);
+      transition: var(--transition);
+    }
+
+    .header.scrolled {
+      background: rgba(26, 26, 26, 0.97);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 80px;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--yellow);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon .material-symbols-outlined {
+      font-size: 22px;
+      color: var(--dark);
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-body);
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--yellow);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--yellow);
+    }
+
+    .header-cta {
+      padding: 10px 24px;
+      font-size: 14px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--white);
+    }
+
+    .mobile-toggle .material-symbols-outlined {
+      font-size: 28px;
+    }
+
+    /* Mobile nav - hidden by default on all screens */
+    .mobile-nav {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--dark);
+      padding: 0 24px 24px;
+      z-index: 999;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      overflow-y: auto;
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.35s ease,
+                  visibility 0.35s ease;
+    }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 16px 0;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text-body);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: color 0.2s ease, padding-left 0.2s ease;
+      text-align: center;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:active {
+      color: var(--yellow);
+      padding-left: 8px;
+    }
+
+    .mobile-nav .btn {
+      margin-top: 24px;
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 16px;
+      background: var(--yellow);
+      color: var(--dark);
+      border: none;
+    }
+
+    .mobile-nav .btn:hover {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--yellow);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 192, 0, 0.35);
+    }
+
+    .mobile-nav-overlay {
+      position: fixed;
+      inset: 0;
+      top: 80px;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .mobile-nav-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ========================================
+       HERO SECTION
+    ======================================== */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .hero .container {
+      max-width: 1400px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80') center/cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(26, 26, 26, 0.92) 0%,
+        rgba(26, 26, 26, 0.75) 50%,
+        rgba(26, 26, 26, 0.4) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 1000px;
+      padding-top: 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 192, 0, 0.15);
+      border: 1px solid rgba(255, 192, 0, 0.3);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--yellow);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-badge .material-symbols-outlined {
+      font-size: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-body);
+      margin-bottom: 36px;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--yellow);
+    }
+
+    .hero-stat-label {
+      font-size: 14px;
+      color: var(--white);
+      margin-top: 4px;
+    }
+
+    /* ========================================
+       SERVICE CARDS (3-col below hero)
+    ======================================== */
+    .hero-cards {
+      position: relative;
+      z-index: 10;
+      margin-top: -50px;
+    }
+
+    .hero-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .hero-card {
+      background: var(--dark-charcoal);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 192, 0, 0.2);
+    }
+
+    .hero-card-icon {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: var(--yellow);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card-icon .material-symbols-outlined {
+      font-size: 28px;
+      color: var(--dark);
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .hero-card h3 {
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       ABOUT / EXPERTS SECTION
+    ======================================== */
+    .about-section {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 100px;
+      height: 100px;
+      border-top: 4px solid var(--yellow);
+      border-left: 4px solid var(--yellow);
+      border-radius: var(--radius-lg) 0 0 0;
+      z-index: 1;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      width: 100px;
+      height: 100px;
+      border-bottom: 4px solid var(--yellow);
+      border-right: 4px solid var(--yellow);
+      border-radius: 0 0 var(--radius-lg) 0;
+    }
+
+    .about-content h2 {
+      font-size: 38px;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 16px;
+      color: var(--dark-gray);
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .about-stat-box {
+      background: var(--yellow);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about-stat-box .stat-num {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .about-stat-box .stat-label {
+      font-size: 13px;
+      color: var(--dark-charcoal);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .experience-badge {
+      position: absolute;
+      bottom: 24px;
+      right: -24px;
+      background: var(--yellow);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      text-align: center;
+      z-index: 2;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .experience-badge .num {
+      font-family: var(--font-heading);
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .experience-badge .label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark-charcoal);
+    }
+
+    /* ========================================
+       SERVICES SECTION (4-col)
+    ======================================== */
+    .services-section {
+      padding: var(--section-pad);
+      background: var(--light-gray);
+    }
+
+    .services-section .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .services-section h2 {
+      font-size: 38px;
+      color: var(--dark);
+    }
+
+    .services-section .section-desc {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: var(--dark-gray);
+      font-size: 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid var(--medium-gray);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      border-color: var(--yellow);
+    }
+
+    .service-card-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: rgba(255, 192, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-card-icon .material-symbols-outlined {
+      font-size: 30px;
+      color: var(--yellow);
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .service-card h3 {
+      font-size: 17px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--dark-gray);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       WORK PROCESS SECTION
+    ======================================== */
+    .process-section {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+
+    .process-section .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .process-section h2 {
+      font-size: 38px;
+      color: var(--dark);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .process-card {
+      text-align: center;
+      padding: 24px;
+      position: relative;
+    }
+
+    .process-number {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(255, 192, 0, 0.15);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .process-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto 20px;
+    }
+
+    .process-icon .material-symbols-outlined {
+      font-size: 32px;
+      color: var(--dark);
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .process-card h3 {
+      font-size: 17px;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--dark-gray);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       YELLOW SCROLL BANNER
+    ======================================== */
+    .yellow-banner {
+      background: var(--yellow);
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    .banner-track {
+      display: flex;
+      gap: 48px;
+      animation: scrollBanner 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    .banner-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      flex-shrink: 0;
+    }
+
+    .banner-item .material-symbols-outlined {
+      font-size: 22px;
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+    }
+
+    @keyframes scrollBanner {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========================================
+       WORKFLOW ALTERNATIVE SECTION
+    ======================================== */
+    .workflow-alternative-section {
+      padding: var(--section-pad);
+      background: #0a0a0a;
+    }
+
+    .workflow-alternative-section .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .workflow-alternative-section .section-label {
+      color: var(--yellow);
+    }
+
+    .workflow-alternative-section .section-label::before {
+      background: var(--yellow);
+    }
+
+    .workflow-alternative-section h2 {
+      font-size: 38px;
+      color: var(--white);
+    }
+
+    .workflow-alternative-section .section-desc {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #9ca3af;
+      font-size: 16px;
+    }
+
+    .workflow-alternative-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .workflow-card {
+      position: relative;
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 40px 32px 32px;
+      text-align: left;
+      transition: var(--transition);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .workflow-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 192, 0, 0.3);
+    }
+
+    .workflow-card:hover .workflow-icon {
+      background: var(--yellow);
+    }
+
+    .workflow-card:hover .workflow-icon .material-symbols-outlined {
+      color: var(--dark);
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .workflow-number {
+      font-family: var(--font-heading);
+      font-size: 96px;
+      font-weight: 900;
+      color: rgba(255, 192, 0, 0.08);
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      line-height: 1;
+      z-index: 0;
+    }
+
+    .workflow-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 24px;
+      background: rgba(255, 192, 0, 0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .workflow-icon .material-symbols-outlined {
+      font-size: 28px;
+      color: var(--yellow);
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .workflow-card h3 {
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .workflow-card p {
+      font-size: 14px;
+      color: #9ca3af;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .workflow-arrow {
+      margin-top: 16px;
+      color: var(--yellow);
+      position: relative;
+      z-index: 1;
+    }
+
+    .workflow-arrow .material-symbols-outlined {
+      font-size: 24px;
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ========================================
+       CTA SKYLINE SECTION
+    ======================================== */
+    .cta-skyline {
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .cta-skyline-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80') center/cover no-repeat;
+    }
+
+    .cta-skyline-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(26, 26, 26, 0.93) 0%,
+        rgba(26, 26, 26, 0.7) 60%,
+        rgba(26, 26, 26, 0.4) 100%
+      );
+    }
+
+    .cta-skyline-content {
+      position: relative;
+      z-index: 2;
+      max-width: 550px;
+    }
+
+    .cta-skyline h2 {
+      font-size: 40px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .cta-skyline p {
+      font-size: 16px;
+      color: var(--text-body);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .cta-skyline .trust-items {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-body);
+    }
+
+    .trust-item .material-symbols-outlined {
+      font-size: 22px;
+      color: var(--yellow);
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ========================================
+       STATS SECTION (dark)
+    ======================================== */
+    .stats-section {
+      padding: 60px 0;
+      background: var(--dark-charcoal);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 24px;
+    }
+
+    .stat-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 192, 0, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .stat-icon .material-symbols-outlined {
+      font-size: 26px;
+      color: var(--yellow);
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .stat-number span {
+      color: var(--yellow);
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ========================================
+       PROJECTS / PORTFOLIO
+    ======================================== */
+    .projects-section {
+      padding: var(--section-pad);
+      background: var(--light-gray);
+    }
+
+    .projects-section .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .projects-section h2 {
+      font-size: 38px;
+      color: var(--dark);
+    }
+
+    .project-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .project-tab {
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 2px solid var(--medium-gray);
+      background: var(--white);
+      color: var(--dark-gray);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+
+    .project-tab:hover,
+    .project-tab.active {
+      background: var(--yellow);
+      border-color: var(--yellow);
+      color: var(--dark);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.85) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .project-card:hover .project-card-overlay {
+      opacity: 1;
+    }
+
+    .project-card-overlay h3 {
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .project-card-overlay p {
+      font-size: 13px;
+      color: var(--yellow);
+      font-weight: 500;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--yellow);
+      transition: width 0.4s ease;
+    }
+
+    .project-card:hover::after {
+      width: 100%;
+    }
+
+    /* ========================================
+       PRICING SECTION
+    ======================================== */
+    .pricing-section {
+      padding: var(--section-pad);
+      background: var(--white);
+    }
+
+    .pricing-section .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .pricing-section h2 {
+      font-size: 38px;
+      color: var(--dark);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border: 2px solid var(--medium-gray);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--yellow);
+      box-shadow: 0 12px 40px rgba(255, 192, 0, 0.15);
+    }
+
+    .pricing-card.featured::before {
+      content: 'POPULAR';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 20px;
+      border-radius: 0 0 var(--radius) var(--radius);
+      letter-spacing: 1px;
+    }
+
+    .pricing-card h3 {
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--yellow);
+      margin: 16px 0;
+    }
+
+    .pricing-card .price small {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--dark-gray);
+    }
+
+    .pricing-card .desc {
+      font-size: 14px;
+      color: var(--dark-gray);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      font-size: 14px;
+      color: var(--dark-gray);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .pricing-features li .material-symbols-outlined {
+      font-size: 20px;
+      color: var(--yellow);
+      font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 20;
+      flex-shrink: 0;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ========================================
+       TESTIMONIAL
+    ======================================== */
+    .testimonial-section {
+      padding: var(--section-pad);
+      background: var(--dark-charcoal);
+      overflow: hidden;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .testimonial-left .big-percent {
+      font-family: var(--font-heading);
+      font-size: 120px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-left .big-label {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .testimonial-quote {
+      font-size: 18px;
+      color: var(--text-body);
+      line-height: 1.8;
+      font-style: italic;
+      position: relative;
+      padding-left: 24px;
+      border-left: 3px solid var(--yellow);
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .testimonial-author img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--yellow);
+    }
+
+    .testimonial-author-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .testimonial-author-role {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .testimonial-right {
+      position: relative;
+    }
+
+    .testimonial-right::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 100px;
+      height: 100px;
+      border-top: 4px solid var(--yellow);
+      border-left: 4px solid var(--yellow);
+      border-radius: var(--radius-lg) 0 0 0;
+      z-index: 2;
+    }
+
+    .testimonial-right::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      width: 100px;
+      height: 100px;
+      border-bottom: 4px solid var(--yellow);
+      border-right: 4px solid var(--yellow);
+      border-radius: 0 0 var(--radius-lg) 0;
+      z-index: 2;
+    }
+
+    .testimonial-right img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ========================================
+       DARK FEATURE CARDS (4-col)
+    ======================================== */
+    .dark-cards-section {
+      padding: var(--section-pad);
+      background: var(--dark);
+    }
+
+    .dark-cards-section .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .dark-cards-section h2 {
+      font-size: 38px;
+      color: var(--white);
+    }
+
+    .dark-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .dark-card {
+      background: var(--dark-card);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .dark-card:hover {
+      border-color: rgba(255, 192, 0, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .dark-card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 192, 0, 0.12);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .dark-card-icon .material-symbols-outlined {
+      font-size: 24px;
+      color: var(--yellow);
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .dark-card h3 {
+      font-size: 17px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .dark-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       CONTACT / FORM SECTION
+    ======================================== */
+    .contact-section {
+      padding: var(--section-pad);
+      background: var(--light-gray);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-image {
+      position: relative;
+    }
+
+    .contact-image::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 100px;
+      height: 100px;
+      border-top: 4px solid var(--yellow);
+      border-left: 4px solid var(--yellow);
+      border-radius: var(--radius-lg) 0 0 0;
+      z-index: 1;
+    }
+
+    .contact-image::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      right: -12px;
+      width: 100px;
+      height: 100px;
+      border-bottom: 4px solid var(--yellow);
+      border-right: 4px solid var(--yellow);
+      border-radius: 0 0 var(--radius-lg) 0;
+      z-index: 1;
+    }
+
+    .contact-image img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+    }
+
+    .contact-form-wrapper h2 {
+      font-size: 36px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrapper .form-desc {
+      font-size: 16px;
+      color: var(--dark-gray);
+      margin-bottom: 32px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 14px 16px;
+      border: 2px solid var(--medium-gray);
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--dark);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 3px rgba(255, 192, 0, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    /* ========================================
+       YELLOW STATS BANNER
+    ======================================== */
+    .yellow-stats-banner {
+      background: var(--yellow);
+      padding: 50px 0;
+    }
+
+    .yellow-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .yellow-stats-big {
+      font-family: var(--font-heading);
+      font-size: 100px;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .yellow-stats-text h3 {
+      font-size: 24px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .yellow-stats-text p {
+      font-size: 16px;
+      color: var(--dark-charcoal);
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      background: var(--dark);
+      padding: 60px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--dark-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .footer-social-link:hover {
+      background: var(--yellow);
+    }
+
+    .footer-social-link .material-symbols-outlined {
+      font-size: 20px;
+      color: var(--white);
+    }
+
+    .footer-social-link:hover .material-symbols-outlined {
+      color: var(--dark);
+    }
+
+    .footer-col h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 6px 0;
+    }
+
+    .footer-col a:hover {
+      color: var(--yellow);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-bottom-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--yellow);
+    }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+    @media (max-width: 1024px) {
+      .hero-cards-grid { grid-template-columns: repeat(3, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .dark-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+      .workflow-alternative-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      :root { --section-pad: 60px 0; }
+
+      .nav-links { display: none; }
+      .header-cta.desktop { display: none; }
+      .mobile-toggle { display: flex; }
+
+      .hero h1 { font-size: 36px; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+
+      .hero-cards-grid { grid-template-columns: 1fr; }
+
+      .about-grid,
+      .contact-grid,
+      .testimonial-grid { grid-template-columns: 1fr; }
+
+      .services-grid,
+      .process-grid,
+      .dark-cards-grid,
+      .stats-grid,
+      .pricing-grid,
+      .workflow-alternative-grid { grid-template-columns: 1fr; }
+
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+
+      .yellow-stats-grid { grid-template-columns: 1fr; text-align: center; }
+
+      .experience-badge { right: 16px; }
+
+      .testimonial-left .big-percent { font-size: 80px; }
+
+      .project-card-overlay { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 30px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Brokuz Construction Home">
+        <div class="logo-icon">
+          <span class="material-symbols-outlined">construction</span>
+        </div>
+        Brokuz
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#hero" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="#blog">Blog</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-yellow header-cta desktop">Get Started</a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="material-symbols-outlined" id="mobileToggleIcon">menu</span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#hero">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#projects">Portfolio</a>
+      <a href="#contact">Contact</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact" class="btn btn-yellow">Get Started</a>
+    </nav>
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" role="img" aria-label="Construction workers on site"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="material-symbols-outlined">layers</span>
+          Welcome to Brokuz Construction
+        </div>
+        <h1>Built With Strength<br>And <span class="yellow-text">Precision</span></h1>
+        <p>Delivering expert modern construction services with unmatched quality and reliability. From concept to completion, we build structures that stand the test of time.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-yellow">
+            Get Started
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="#projects" class="btn btn-outline">Our Projects</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-number">29+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="hero-stat-number">4.6K</div>
+            <div class="hero-stat-label">Projects Completed</div>
+          </div>
+          <div>
+            <div class="hero-stat-number">98%</div>
+            <div class="hero-stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HERO CARDS (3-col) ============ -->
+  <section class="hero-cards">
+    <div class="container">
+      <div class="hero-cards-grid">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <span class="material-symbols-outlined">verified</span>
+          </div>
+          <div>
+            <h3>Quality Workmanship</h3>
+            <p>Every project is executed with the highest standards of craftsmanship and attention to detail.</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <span class="material-symbols-outlined">assignment</span>
+          </div>
+          <div>
+            <h3>Project Management</h3>
+            <p>Professional oversight from planning through completion ensuring on-time, on-budget delivery.</p>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <span class="material-symbols-outlined">groups</span>
+          </div>
+          <div>
+            <h3>Certified Professionals</h3>
+            <p>Our team of licensed experts brings decades of combined experience to every project.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / EXPERTS ============ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Construction professionals reviewing blueprints" loading="lazy">
+          <div class="experience-badge">
+            <div class="num">25</div>
+            <div class="label">Years of<br>Experience</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">About Us</span>
+          <h2>Experts <span class="yellow-text">Modern Construction</span> Service & Solutions</h2>
+          <p>We are a leading construction company dedicated to delivering innovative building solutions. Our team combines cutting-edge technology with traditional craftsmanship to create structures that exceed expectations.</p>
+          <p>From residential developments to large-scale commercial projects, we approach every build with the same commitment to quality, safety, and client satisfaction.</p>
+          <div class="about-stats">
+            <div class="about-stat-box">
+              <div class="stat-num">29</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="about-stat-box">
+              <div class="stat-num">180+</div>
+              <div class="stat-label">Expert Team</div>
+            </div>
+            <div class="about-stat-box">
+              <div class="stat-num">4.6K</div>
+              <div class="stat-label">Projects Done</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES (4-col) ============ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Services</span>
+        <h2>Innovative <span class="yellow-text">Design Reliable</span><br>Construction</h2>
+        <p class="section-desc">We offer a comprehensive range of construction services tailored to meet the unique needs of each project.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-icon">
+            <span class="material-symbols-outlined">home</span>
+          </div>
+          <h3>General Contracting</h3>
+          <p>Full-service general contracting for residential and commercial construction projects of any scale.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">
+            <span class="material-symbols-outlined">architecture</span>
+          </div>
+          <h3>Planning, Design & Build</h3>
+          <p>Integrated design-build services that streamline your project from concept to completion.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">
+            <span class="material-symbols-outlined">apartment</span>
+          </div>
+          <h3>Renovation & Remodeling</h3>
+          <p>Transform existing spaces with expert renovation services that breathe new life into structures.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">
+            <span class="material-symbols-outlined">task_alt</span>
+          </div>
+          <h3>Project Management</h3>
+          <p>Professional project management ensuring timely delivery, budget control, and quality assurance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKFLOW ALTERNATIVE ============ -->
+  <section class="workflow-alternative-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Workflow</span>
+        <h2>How <span class="yellow-text">We Build</span> Success</h2>
+        <p class="section-desc">A proven process that delivers exceptional results from concept to completion</p>
+      </div>
+      <div class="workflow-alternative-grid">
+        <div class="workflow-card">
+          <div class="workflow-number">01</div>
+          <div class="workflow-icon">
+            <span class="material-symbols-outlined">handshake</span>
+          </div>
+          <h3>Discovery & Planning</h3>
+          <p>We start by understanding your vision, goals, and requirements through comprehensive consultation and site analysis.</p>
+          <div class="workflow-arrow">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-number">02</div>
+          <div class="workflow-icon">
+            <span class="material-symbols-outlined">architecture</span>
+          </div>
+          <h3>Design & Engineering</h3>
+          <p>Our team creates detailed blueprints, 3D models, and technical specifications tailored to your project needs.</p>
+          <div class="workflow-arrow">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-number">03</div>
+          <div class="workflow-icon">
+            <span class="material-symbols-outlined">engineering</span>
+          </div>
+          <h3>Construction</h3>
+          <p>Expert builders execute your project with precision, quality materials, and strict adherence to safety standards.</p>
+          <div class="workflow-arrow">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+        <div class="workflow-card">
+          <div class="workflow-number">04</div>
+          <div class="workflow-icon">
+            <span class="material-symbols-outlined">check_circle</span>
+          </div>
+          <h3>Delivery & Warranty</h3>
+          <p>Final inspections, quality assurance, and comprehensive warranties ensure complete peace of mind.</p>
+          <div class="workflow-arrow">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK PROCESS ============ -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How We Work</span>
+        <h2>Our <span class="yellow-text">Work Process</span></h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="process-number">01</span>
+          <div class="process-icon">
+            <span class="material-symbols-outlined">forum</span>
+          </div>
+          <h3>Strategy & Consultation</h3>
+          <p>We begin with understanding your vision, goals, and requirements through detailed consultation.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-number">02</span>
+          <div class="process-icon">
+            <span class="material-symbols-outlined">design_services</span>
+          </div>
+          <h3>Design & Engineering</h3>
+          <p>Our architects and engineers create detailed blueprints and structural plans for your project.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-number">03</span>
+          <div class="process-icon">
+            <span class="material-symbols-outlined">engineering</span>
+          </div>
+          <h3>Construction</h3>
+          <p>Expert teams execute the build with precision, adhering to the highest safety and quality standards.</p>
+        </div>
+        <div class="process-card">
+          <span class="process-number">04</span>
+          <div class="process-icon">
+            <span class="material-symbols-outlined">handshake</span>
+          </div>
+          <h3>Delivery & Handover</h3>
+          <p>Final inspections, quality checks, and smooth handover with full documentation and warranties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW SCROLL BANNER ============ -->
+  <section class="yellow-banner" aria-hidden="true">
+    <div class="banner-track">
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Construction</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Building</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Architecture</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Consulting</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Renovation</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Engineering</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Planning</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Safety</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Construction</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Building</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Architecture</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Consulting</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Renovation</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Engineering</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Planning</span>
+      <span class="banner-item"><span class="material-symbols-outlined icon-filled">star</span> Safety</span>
+    </div>
+  </section>
+
+  <!-- ============ CTA SKYLINE ============ -->
+  <section class="cta-skyline">
+    <div class="cta-skyline-bg" role="img" aria-label="City skyline at sunset"></div>
+    <div class="cta-skyline-overlay"></div>
+    <div class="container">
+      <div class="cta-skyline-content">
+        <span class="section-label">Your Trusted Partner</span>
+        <h2>Your Trusted Construction <span class="yellow-text">Partner</span></h2>
+        <p>We bring your vision to life with precision engineering, innovative solutions, and unwavering commitment to excellence. Let us build your future together.</p>
+        <a href="#contact" class="btn btn-yellow">
+          Start Your Project
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <div class="trust-items">
+          <div class="trust-item">
+            <span class="material-symbols-outlined">check_circle</span>
+            Licensed & Insured
+          </div>
+          <div class="trust-item">
+            <span class="material-symbols-outlined">check_circle</span>
+            On-Time Delivery
+          </div>
+          <div class="trust-item">
+            <span class="material-symbols-outlined">check_circle</span>
+            Quality Guaranteed
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS SECTION ============ -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <span class="material-symbols-outlined">people</span>
+          </div>
+          <div class="stat-number">60.5<span>K</span></div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <span class="material-symbols-outlined">domain</span>
+          </div>
+          <div class="stat-number">7.8<span>K</span></div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <span class="material-symbols-outlined">military_tech</span>
+          </div>
+          <div class="stat-number">135<span>+</span></div>
+          <div class="stat-label">Awards Won</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <span class="material-symbols-outlined">grade</span>
+          </div>
+          <div class="stat-number">60.5<span>K</span></div>
+          <div class="stat-label">5-Star Reviews</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS / PORTFOLIO ============ -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Portfolio</span>
+        <h2>Our Project <span class="yellow-text">Excellence</span></h2>
+      </div>
+      <div class="project-tabs">
+        <button class="project-tab active">All Projects</button>
+        <button class="project-tab">Residential</button>
+        <button class="project-tab">Commercial</button>
+        <button class="project-tab">Industrial</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="Modern commercial building" loading="lazy">
+          <div class="project-card-overlay">
+            <h3>Metro Tower Complex</h3>
+            <p>Commercial Construction</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Luxury residential development" loading="lazy">
+          <div class="project-card-overlay">
+            <h3>Riverside Residences</h3>
+            <p>Residential Development</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Industrial construction project" loading="lazy">
+          <div class="project-card-overlay">
+            <h3>Industrial Park Phase II</h3>
+            <p>Industrial Construction</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1590725121839-892b458a74fe?w=600&q=80" alt="Modern office building" loading="lazy">
+          <div class="project-card-overlay">
+            <h3>Downtown Office Hub</h3>
+            <p>Commercial Renovation</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="Luxury home construction" loading="lazy">
+          <div class="project-card-overlay">
+            <h3>Skyline Apartments</h3>
+            <p>Residential High-Rise</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" alt="Bridge construction" loading="lazy">
+          <div class="project-card-overlay">
+            <h3>Harbor Bridge Expansion</h3>
+            <p>Infrastructure Project</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Pricing</span>
+        <h2>Affordable <span class="yellow-text">Solutions</span> for<br>Every Budget</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Basic Plan</h3>
+          <p class="desc">Ideal for small residential projects</p>
+          <div class="price">$49 <small>/sq ft</small></div>
+          <ul class="pricing-features">
+            <li><span class="material-symbols-outlined">check_circle</span> Project consultation</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Basic design plans</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Standard materials</li>
+            <li><span class="material-symbols-outlined">check_circle</span> 1-year warranty</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Email support</li>
+          </ul>
+          <a href="#contact" class="btn btn-dark">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Standard Plan</h3>
+          <p class="desc">Best for mid-size commercial builds</p>
+          <div class="price">$89 <small>/sq ft</small></div>
+          <ul class="pricing-features">
+            <li><span class="material-symbols-outlined">check_circle</span> Everything in Basic</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Custom design plans</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Premium materials</li>
+            <li><span class="material-symbols-outlined">check_circle</span> 3-year warranty</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Dedicated project manager</li>
+          </ul>
+          <a href="#contact" class="btn btn-yellow">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise Plan</h3>
+          <p class="desc">For large-scale industrial projects</p>
+          <div class="price">$149 <small>/sq ft</small></div>
+          <ul class="pricing-features">
+            <li><span class="material-symbols-outlined">check_circle</span> Everything in Standard</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Full architectural design</li>
+            <li><span class="material-symbols-outlined">check_circle</span> Luxury-grade materials</li>
+            <li><span class="material-symbols-outlined">check_circle</span> 5-year warranty</li>
+            <li><span class="material-symbols-outlined">check_circle</span> 24/7 priority support</li>
+          </ul>
+          <a href="#contact" class="btn btn-dark">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIAL ============ -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="testimonial-grid">
+        <div class="testimonial-left">
+          <span class="section-label">Client Feedback</span>
+          <div class="big-percent">98%</div>
+          <div class="big-label">Client Satisfaction Rate</div>
+          <blockquote class="testimonial-quote">
+            The attention to detail and professionalism of the Brokuz team exceeded all our expectations. They delivered our commercial complex ahead of schedule and within budget. An outstanding partner for any construction project.
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Michael Johnson" loading="lazy">
+            <div>
+              <div class="testimonial-author-name">Michael Johnson</div>
+              <div class="testimonial-author-role">CEO, Metro Development Corp</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-right">
+          <img src="https://images.unsplash.com/photo-1574359411659-15573a27fd0c?w=800&q=80" alt="Completed construction project" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DARK FEATURE CARDS ============ -->
+  <section class="dark-cards-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Choose Us</span>
+        <h2>What Makes Us <span class="yellow-text">Different</span></h2>
+      </div>
+      <div class="dark-cards-grid">
+        <div class="dark-card">
+          <div class="dark-card-icon">
+            <span class="material-symbols-outlined">shield</span>
+          </div>
+          <h3>Safety First</h3>
+          <p>Rigorous safety protocols and training ensure zero-incident work environments on every project site.</p>
+        </div>
+        <div class="dark-card">
+          <div class="dark-card-icon">
+            <span class="material-symbols-outlined">bolt</span>
+          </div>
+          <h3>Fast Execution</h3>
+          <p>Streamlined processes and expert teams deliver projects on schedule without compromising on quality.</p>
+        </div>
+        <div class="dark-card">
+          <div class="dark-card-icon">
+            <span class="material-symbols-outlined">savings</span>
+          </div>
+          <h3>Budget Control</h3>
+          <p>Transparent pricing and meticulous cost management keep your project within the agreed budget.</p>
+        </div>
+        <div class="dark-card">
+          <div class="dark-card-icon">
+            <span class="material-symbols-outlined">favorite</span>
+          </div>
+          <h3>Client Focused</h3>
+          <p>Your vision drives everything we do. We listen, adapt, and deliver results that exceed expectations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ YELLOW STATS BANNER ============ -->
+  <section class="yellow-stats-banner">
+    <div class="container">
+      <div class="yellow-stats-grid">
+        <div class="yellow-stats-big">98%</div>
+        <div class="yellow-stats-text">
+          <h3>Our Clients Are Satisfied With Our Work Quality</h3>
+          <p>We have consistently maintained a 98% client satisfaction rate across thousands of projects. Our commitment to quality, transparency, and communication has earned us the trust of homeowners, businesses, and developers across the region.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT FORM ============ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-image">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Customer service representative" loading="lazy">
+        </div>
+        <div class="contact-form-wrapper">
+          <span class="section-label">Get In Touch</span>
+          <h2>Have Any <span class="yellow-text">Questions?</span></h2>
+          <p class="form-desc">Fill out the form below and our team will get back to you within 24 hours.</p>
+          <form class="contact-form" onsubmit="event.preventDefault()">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Doe" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="(555) 123-4567">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service">
+                <option value="">Select a service</option>
+                <option>General Contracting</option>
+                <option>Design & Build</option>
+                <option>Renovation</option>
+                <option>Project Management</option>
+                <option>Consulting</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" placeholder="Tell us about your project..." rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-yellow">
+              Send Message
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" aria-label="Brokuz Construction Home">
+            <div class="logo-icon">
+              <span class="material-symbols-outlined">construction</span>
+            </div>
+            Brokuz
+          </a>
+          <p>Building excellence since 1997. We deliver innovative construction solutions with quality craftsmanship and unwavering commitment to our clients.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <span class="material-symbols-outlined">share</span>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <span class="material-symbols-outlined">tag</span>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <span class="material-symbols-outlined">photo_camera</span>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <span class="material-symbols-outlined">work</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#">General Contracting</a>
+          <a href="#">Design & Build</a>
+          <a href="#">Renovation</a>
+          <a href="#">Project Management</a>
+          <a href="#">Consulting</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Our Team</a>
+          <a href="#">Careers</a>
+          <a href="#">News & Blog</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Case Studies</a>
+          <a href="#">Testimonials</a>
+          <a href="#">FAQ</a>
+          <a href="#">Safety Standards</a>
+          <a href="#">Sustainability</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="#">1234 Construction Ave<br>New York, NY 10001</a>
+          <a href="tel:+15551234567">(555) 123-4567</a>
+          <a href="mailto:info@brokuz.com">info@brokuz.com</a>
+          <a href="#">Mon - Fri: 8AM - 6PM</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>2026 Brokuz Construction. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    // Sticky header
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileToggleIcon = document.getElementById('mobileToggleIcon');
+
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      mobileOverlay.classList.remove('open');
+      mobileToggleIcon.textContent = 'menu';
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    function openMobileNav() {
+      mobileNav.classList.add('open');
+      mobileOverlay.classList.add('open');
+      mobileToggleIcon.textContent = 'close';
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    mobileToggle.addEventListener('click', () => {
+      if (mobileNav.classList.contains('open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    });
+
+    mobileOverlay.addEventListener('click', closeMobileNav);
+
+    // Close mobile nav on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+        closeMobileNav();
+      }
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          closeMobileNav();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll reveal animation
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.hero-card, .service-card, .process-card, .dark-card, .pricing-card, .project-card, .stat-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Project tab filtering (visual only)
+    document.querySelectorAll('.project-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.project-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
