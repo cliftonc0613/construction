@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splendid Services - Commercial and Residential Construction</title>
+  <meta name="description" content="Splendid Services provides expert commercial and residential construction and maintenance services with 30+ years of experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css">
+  <style>
+    /* ========================================
+       CSS CUSTOM PROPERTIES
+    ======================================== */
+    :root {
+      --navy: #0D2240;
+      --navy-light: #1A3A52;
+      --navy-dark: #091a30;
+      --orange: #FF6B35;
+      --orange-hover: #E55A1F;
+      --orange-light: #FF7F50;
+      --dark-gray: #3A3A3A;
+      --dark-gray-light: #4A4A4A;
+      --white: #FFFFFF;
+      --light-gray: #CCCCCC;
+      --medium-gray: #999999;
+      --off-white: #F5F5F5;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      --container: 1400px;
+      --transition: all 0.3s ease;
+    }
+
+    /* ========================================
+       RESET & BASE
+    ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--white);
+      background: var(--navy);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul { list-style: none; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ========================================
+       UTILITY: Section Icon
+    ======================================== */
+    .section-icon {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: var(--orange);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       BUTTONS
+    ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 40px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .btn-orange:hover {
+      background: var(--orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+    }
+
+    .btn-outline-orange {
+      background: transparent;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+    }
+
+    .btn-outline-orange:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================
+       HEADER / NAV
+    ======================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--navy);
+      transition: var(--transition);
+    }
+
+    .header.scrolled {
+      background: rgba(13, 34, 64, 0.97);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-top {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header-top-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 24px;
+      padding: 8px 60px;
+      max-width: var(--container);
+      margin: 0 auto;
+      font-size: 13px;
+      color: var(--light-gray);
+    }
+
+    .header-top-inner a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--light-gray);
+    }
+
+    .header-top-inner a:hover {
+      color: var(--orange);
+    }
+
+    .header-top-inner svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--orange);
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 70px;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--orange);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo-icon span {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .logo-text small {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--orange);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--light-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    .header-cta {
+      padding: 10px 28px;
+      font-size: 13px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--white);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--navy);
+      padding: 100px 24px 24px;
+      z-index: 999;
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.35s ease,
+                  visibility 0.35s ease;
+    }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav a {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav a:hover {
+      color: var(--orange);
+    }
+
+    .mobile-nav .btn {
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-close::before,
+    .mobile-close::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+
+    .mobile-close::before { transform: rotate(45deg); }
+    .mobile-close::after { transform: rotate(-45deg); }
+
+    /* ========================================
+       HERO SECTION
+    ======================================== */
+    .hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13, 34, 64, 0.85) 0%, rgba(13, 34, 64, 0.6) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .hero-box {
+      border-left: 5px solid var(--orange);
+      padding-left: 24px;
+      margin-bottom: 32px;
+    }
+
+    .hero-box h1 {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0;
+    }
+
+    .hero-body {
+      font-size: 16px;
+      color: var(--light-gray);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    /* Diagonal stripe pattern accent */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgba(255, 107, 53, 0.06) 8px,
+        rgba(255, 107, 53, 0.06) 16px
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ========================================
+       WE WORK FOR YOU
+    ======================================== */
+    .work-for-you {
+      padding: 90px 0;
+      background: var(--navy);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .work-content {
+      padding-right: 20px;
+    }
+
+    .work-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .work-heading h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .work-content p {
+      font-size: 15px;
+      color: var(--light-gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .work-content p strong {
+      color: var(--orange);
+    }
+
+    .work-image {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .work-image img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
+
+    /* ========================================
+       TESTIMONIAL / SERVICES (2-Column)
+    ======================================== */
+    .testimonial-section {
+      padding: 0;
+      background: var(--navy);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+    }
+
+    .testimonial-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--navy) 100%);
+    }
+
+    .testimonial-content {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--navy);
+    }
+
+    .testimonial-content p {
+      font-size: 15px;
+      color: var(--light-gray);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-content p:first-of-type {
+      font-size: 16px;
+    }
+
+    .testimonial-content strong {
+      color: var(--white);
+    }
+
+    /* ========================================
+       OFFERS SECTION (Sidebar + 6-Card Grid)
+    ======================================== */
+    .offers-section {
+      padding: 90px 0;
+      background: #1a1a1a;
+    }
+
+    .offers-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    .offers-sidebar {
+      padding: 40px 30px 40px 0;
+    }
+
+    .offers-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .offers-header h2 {
+      font-size: 32px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
+
+    .offers-intro {
+      font-size: 15px;
+      color: var(--light-gray);
+      line-height: 1.8;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 0;
+    }
+
+    .offer-card {
+      padding: 32px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: var(--transition);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Alternating card backgrounds matching the reference */
+    .offer-card:nth-child(1) { background: #2a2a2a; }
+    .offer-card:nth-child(2) { background: #3a3a3a; }
+    .offer-card:nth-child(3) { background: #333333; }
+    .offer-card:nth-child(4) { background: #333333; }
+    .offer-card:nth-child(5) { background: #3a3a3a; }
+    .offer-card:nth-child(6) { background: #2e2e2e; }
+
+    .offer-card:hover {
+      border-color: var(--orange);
+      box-shadow: 0 4px 20px rgba(255, 107, 53, 0.12);
+    }
+
+    .offer-card h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .offer-card p {
+      font-size: 14px;
+      color: var(--light-gray);
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       GRAB INTEREST
+    ======================================== */
+    .grab-interest {
+      padding: 80px 0;
+      background: var(--navy);
+      border-top: 3px solid var(--orange);
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .grab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .grab-content {
+      padding-right: 40px;
+    }
+
+    .grab-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .grab-heading h2 {
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .grab-content p {
+      font-size: 15px;
+      color: var(--light-gray);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .grab-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .grab-stats .stat-number {
+      font-family: var(--font-heading);
+      font-size: 96px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .grab-stats .stat-label {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* ========================================
+       PORTFOLIO SECTION
+    ======================================== */
+    .portfolio-section {
+      padding: 90px 0;
+      background: var(--navy-dark);
+    }
+
+    .portfolio-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .portfolio-heading h2 {
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .portfolio-wrapper {
+      position: relative;
+      padding: 0 50px;
+    }
+
+    .portfolio-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 16px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .portfolio-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .portfolio-item {
+      flex: 0 0 calc(25% - 12px);
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 4/3;
+      scroll-snap-align: start;
+    }
+
+    .portfolio-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 34, 64, 0);
+      transition: var(--transition);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .portfolio-item:hover::after {
+      background: rgba(255, 107, 53, 0.15);
+    }
+
+    .portfolio-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: var(--orange);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .portfolio-nav:hover {
+      background: var(--orange-hover);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .portfolio-nav svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--white);
+    }
+
+    .portfolio-nav.prev { left: 0; }
+    .portfolio-nav.next { right: 0; }
+
+    /* ========================================
+       FAQ SECTION
+    ======================================== */
+    .faq-section {
+      padding: 90px 0;
+      background: var(--navy);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .faq-left {
+      padding-top: 20px;
+    }
+
+    .faq-subtitle {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--medium-gray);
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .faq-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .faq-heading h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .faq-left p {
+      font-size: 14px;
+      color: var(--light-gray);
+      line-height: 1.7;
+    }
+
+    .faq-accordion {
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: rgba(255, 107, 53, 0.05);
+    }
+
+    .faq-question.active {
+      color: var(--orange);
+      background: rgba(255, 107, 53, 0.05);
+    }
+
+    .faq-toggle {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .faq-toggle::before,
+    .faq-toggle::after {
+      content: '';
+      position: absolute;
+      background: var(--orange);
+      transition: var(--transition);
+    }
+
+    .faq-toggle::before {
+      width: 12px;
+      height: 2px;
+    }
+
+    .faq-toggle::after {
+      width: 2px;
+      height: 12px;
+    }
+
+    .faq-question.active .faq-toggle::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 200px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 20px 56px;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       CONTACT SECTION
+    ======================================== */
+    .contact-section {
+      padding: 90px 0;
+      background: var(--navy-dark);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-header p {
+      font-size: 14px;
+      color: var(--medium-gray);
+      margin-bottom: 8px;
+    }
+
+    .contact-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .contact-title h2 {
+      font-size: 32px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--navy-light);
+      border-radius: 3px;
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--navy);
+      transition: var(--transition);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--medium-gray);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      background: var(--orange);
+      padding: 50px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .logo-icon {
+      background: var(--white);
+    }
+
+    .footer-brand .logo-icon span {
+      color: var(--orange);
+    }
+
+    .footer-brand .logo-text {
+      color: var(--navy);
+    }
+
+    .footer-brand .logo-text small {
+      color: var(--navy);
+      opacity: 0.7;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--navy);
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul li a {
+      font-size: 13px;
+      color: var(--navy);
+      opacity: 0.8;
+    }
+
+    .footer-col ul li a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--navy-dark);
+      transform: translateY(-2px);
+    }
+
+    .footer-social a svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(13, 34, 64, 0.2);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--navy);
+      opacity: 0.7;
+    }
+
+    /* ========================================
+       SCROLL REVEAL
+    ======================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       RESPONSIVE: Tablet (1024px)
+    ======================================== */
+    @media (max-width: 1024px) {
+      .container { padding: 0 40px; }
+      .header-main { padding: 0 40px; }
+      .header-top-inner { padding: 8px 40px; }
+
+      .hero-box h1 { font-size: 34px; }
+
+      .work-grid,
+      .grab-grid,
+      .faq-grid { gap: 40px; }
+
+      .offers-layout {
+        grid-template-columns: 200px 1fr;
+      }
+
+      .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portfolio-item {
+        flex: 0 0 calc(33.333% - 11px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE: Tablet Small (768px)
+    ======================================== */
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .header-main { padding: 0 24px; }
+      .header-top-inner { padding: 8px 24px; }
+      .header-top { display: none; }
+
+      .nav-links { display: none; }
+      .header-cta { display: none; }
+      .mobile-toggle { display: block; }
+
+      .hero { min-height: 500px; padding: 120px 0 80px; }
+      .hero-box h1 { font-size: 28px; }
+      .hero-body { font-size: 14px; }
+
+      .work-grid,
+      .testimonial-grid,
+      .grab-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-image { max-height: 350px; }
+      .testimonial-content { padding: 40px 24px; }
+
+      .offers-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .offers-sidebar {
+        padding: 0 0 20px 0;
+      }
+
+      .offers-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio-item {
+        flex: 0 0 calc(50% - 8px);
+      }
+
+      .portfolio-wrapper {
+        padding: 0 46px;
+      }
+
+      .grab-stats .stat-number { font-size: 72px; }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE: Mobile (480px)
+    ======================================== */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .header-main { padding: 0 16px; }
+
+      .hero { padding: 110px 0 60px; min-height: auto; }
+      .hero-box h1 { font-size: 24px; }
+
+      .work-for-you,
+      .offers-section,
+      .portfolio-section,
+      .faq-section,
+      .contact-section {
+        padding: 60px 0;
+      }
+
+      .grab-interest { padding: 60px 0; }
+
+      .offers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-item {
+        flex: 0 0 100%;
+      }
+
+      .portfolio-wrapper {
+        padding: 0 40px;
+      }
+
+      .grab-stats .stat-number { font-size: 56px; }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .btn {
+        padding: 14px 28px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER
+  ======================================== -->
+  <header class="header" id="header">
+    <div class="header-top">
+      <div class="header-top-inner">
+        <a href="tel:+12345678910">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          (234) 567-8910
+        </a>
+        <a href="mailto:splendidservices@hotmail.com">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          splendidservices@hotmail.com
+        </a>
+      </div>
+    </div>
+    <div class="header-main">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <span>S</span>
+        </div>
+        <div class="logo-text">
+          Splendid
+          <small>Services</small>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#about" class="active">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Our Work</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-orange header-cta">Get Started</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose" aria-label="Close navigation menu"></button>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Our Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-orange">Get Started</a>
+  </nav>
+
+  <!-- ========================================
+       HERO SECTION
+  ======================================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80" alt="Construction site with wooden framework" loading="eager">
+    </div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="hero-box">
+          <h1>Commercial and residential construction and maintenance services</h1>
+        </div>
+        <p class="hero-body">Your Repair Professional will arrive with everything necessary to fix any problem. No need for you to go out and buy supplies. All of our professionals are trained in safe work practices, so they can complete your project quickly while also protecting your family from harm.</p>
+        <a href="#contact" class="btn btn-orange">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       WE WORK FOR YOU
+  ======================================== -->
+  <section class="work-for-you" id="about">
+    <div class="container">
+      <div class="work-grid">
+        <div class="work-content reveal">
+          <div class="work-heading">
+            <span class="section-icon"></span>
+            <h2>We Work For You</h2>
+          </div>
+          <p>We're committed to providing the best service and customer satisfaction. We'll keep you up to date throughout your project with weekly or monthly reports so that everything runs smoothly, efficiently &amp; discreetly!</p>
+          <p>We provide emergency services as well if needed but please contact us first before taking any actions in order avoid delays caused by unexpected situations.</p>
+        </div>
+        <div class="work-image reveal">
+          <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=800&q=80" alt="Professional construction tools and equipment" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONIAL / SERVICES
+  ======================================== -->
+  <section class="testimonial-section" id="services">
+    <div class="testimonial-grid">
+      <div class="testimonial-image reveal">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Professional construction worker" loading="lazy">
+      </div>
+      <div class="testimonial-content reveal">
+        <p>We have the knowledge to keep your home functioning at its best. Our services include: Maintenance &amp; Home Services&mdash; don't risk further damage by letting these fall through the cracks! We offer repair/remodeling projects as well; if it's something that needs fixing but isn't too difficult for us (or anyone!), call today about getting one of our expert technicians take care of business so you can get back out there soon.</p>
+        <p><strong>Repair &amp; Remodeling</strong> &ndash; Have some work done already? No problem&mdash;my team will come fix whatever is wrong on site right away.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       OFFERS SECTION
+  ======================================== -->
+  <section class="offers-section">
+    <div class="container">
+      <div class="offers-layout reveal">
+        <div class="offers-sidebar">
+          <div class="offers-header">
+            <span class="section-icon"></span>
+            <h2>Offers</h2>
+          </div>
+          <p class="offers-intro">We regularly expand the range of services to make cooperation with us as comfortable and easy as possible for our clients.</p>
+        </div>
+        <div class="offers-grid">
+          <div class="offer-card">
+            <h3>Cosmetic repairs</h3>
+            <p>Don't risk further damage to your home by letting maintenance fall by the wayside. Let us save you time take care of your honey-do list!</p>
+          </div>
+          <div class="offer-card">
+            <h3>Repair &amp; Remodeling</h3>
+            <p>Have you gone as far as your knowledge will take you on a project? For anything your home might need, I have you covered. Call for a free consultation!</p>
+          </div>
+          <div class="offer-card">
+            <h3>Construction &amp; Installation</h3>
+            <p>If you're looking for full construction or just an installation, I have experience in both private homes and businesses.</p>
+          </div>
+          <div class="offer-card">
+            <h3>Renovation at a Fair Price:</h3>
+            <p>Whether you need a major repair or a renovation, I can deliver professional skills at a fair price. It is our highest priority to get the job done right the first time on every assignment.</p>
+          </div>
+          <div class="offer-card">
+            <h3>Home Services Options:</h3>
+            <p>We provide a full consultation to explain available options so that you can choose the service that's right for your home or business. We strive to meet your project's needs and save you the time!</p>
+          </div>
+          <div class="offer-card">
+            <h3>Your Repair Professional</h3>
+            <p>I have always loved fixing things. Repair knowledge is not enough without experience. From woodworking to electrical installation, I have fostered some of the skills you need for household repairs and improvements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       GRAB INTEREST
+  ======================================== -->
+  <section class="grab-interest">
+    <div class="container">
+      <div class="grab-grid">
+        <div class="grab-content reveal">
+          <div class="grab-heading">
+            <span class="section-icon"></span>
+            <h2>Grab Interest:</h2>
+          </div>
+          <p>Splendid Services has partnered with experts in home building and restoration with 30+ years of experience.</p>
+          <a href="#contact" class="btn btn-outline-orange">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Contact Us
+          </a>
+        </div>
+        <div class="grab-stats reveal">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PORTFOLIO
+  ======================================== -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="portfolio-heading reveal">
+        <span class="section-icon"></span>
+        <h2>Check Out My Recent Work!</h2>
+      </div>
+      <div class="portfolio-wrapper">
+        <div class="portfolio-grid reveal" id="portfolio-gallery">
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="Modern residential home exterior" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Completed home renovation project" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Residential construction project" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&q=80" alt="Home exterior renovation" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Luxury home interior renovation" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Modern kitchen remodel" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="Contemporary house construction" loading="lazy">
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=90" data-pswp-width="1600" data-pswp-height="1067">
+              <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Completed residential project" loading="lazy">
+            </a>
+          </div>
+        </div>
+        <button class="portfolio-nav prev" aria-label="Previous projects">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button class="portfolio-nav next" aria-label="Next projects">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FAQ
+  ======================================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-left reveal">
+          <p class="faq-subtitle">Commonly Asked Questions</p>
+          <div class="faq-heading">
+            <span class="section-icon"></span>
+            <h2>FAQ</h2>
+          </div>
+          <p>Please contact us if you cannot find an answer to your question.</p>
+        </div>
+        <div class="faq-accordion reveal">
+          <div class="faq-item">
+            <button class="faq-question active" aria-expanded="true">
+              <span class="faq-toggle"></span>
+              Can you bill my home insurance?
+            </button>
+            <div class="faq-answer open" style="max-height: 200px;">
+              <div class="faq-answer-inner">
+                We cannot bill your insurance, but we will provide all the documentation that you need to file for reimbursement.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle"></span>
+              What is included with your free repair estimate?
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Our free repair estimate includes a thorough inspection of the area in question, detailed breakdown of materials and labor costs, and a timeline for project completion.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle"></span>
+              How will you handle the scheduling of your work orders?
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We schedule work orders based on priority and availability. Emergency repairs are handled within 24 hours, while standard maintenance is scheduled within the week at your convenience.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CONTACT FORM
+  ======================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-header reveal">
+        <p>Contact Us</p>
+        <div class="contact-title">
+          <span class="section-icon"></span>
+          <h2>Need Expert Help?</h2>
+        </div>
+      </div>
+      <form class="contact-form reveal" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" placeholder="First Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Last Name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone Number">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <textarea placeholder="How can we help you today?" rows="6"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-orange">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">
+              <span>S</span>
+            </div>
+            <div class="logo-text">
+              Splendid
+              <small>Services</small>
+            </div>
+          </a>
+          <p>&copy; 2024 Splendid Services. All rights reserved.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Guide</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li><a href="#">Mon - Fri: 8am - 6pm</a></li>
+            <li><a href="#">Saturday: 9am - 4pm</a></li>
+            <li><a href="#">Sunday: Closed</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Submit Us</h4>
+          <ul>
+            <li><a href="tel:+12345678910">Phone: (234) 567-8910</a></li>
+            <li><a href="mailto:splendidservices@hotmail.com">Email: splendidservices@hotmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4zm-4 11a3 3 0 110-6 3 3 0 010 6zm4.5-7.5a1 1 0 110-2 1 1 0 010 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Splendid Services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       JAVASCRIPT
+  ======================================== -->
+  <script>
+    // ---- Sticky Header ----
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ---- Mobile Navigation ----
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileClose = document.getElementById('mobileClose');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    mobileClose.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ---- Active Nav Link on Scroll ----
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // ---- FAQ Accordion ----
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const wasActive = button.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-question').forEach(q => {
+          q.classList.remove('active');
+          q.setAttribute('aria-expanded', 'false');
+        });
+        document.querySelectorAll('.faq-answer').forEach(a => {
+          a.classList.remove('open');
+          a.style.maxHeight = '0';
+        });
+
+        // Open clicked (if wasn't already open)
+        if (!wasActive) {
+          button.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+          const answer = button.nextElementSibling;
+          answer.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // ---- Scroll Reveal ----
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ---- Smooth Scroll for Anchor Links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ---- Portfolio Slider ----
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+    const prevBtn = document.querySelector('.portfolio-nav.prev');
+    const nextBtn = document.querySelector('.portfolio-nav.next');
+
+    if (portfolioGrid && prevBtn && nextBtn) {
+      const getScrollAmount = () => {
+        const item = portfolioGrid.querySelector('.portfolio-item');
+        if (!item) return 300;
+        return item.offsetWidth + 16; // item width + gap
+      };
+
+      prevBtn.addEventListener('click', () => {
+        portfolioGrid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', () => {
+        portfolioGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    // ---- PhotoSwipe Lightbox ----
+    import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js').then(({ default: PhotoSwipeLightbox }) => {
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '#portfolio-gallery',
+        children: 'a',
+        pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js'),
+      });
+      lightbox.init();
+    });
+  </script>
+
+</body>
+</html>
