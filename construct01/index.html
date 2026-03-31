@@ -11,6 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
   <style>
     /* ========================================
+       UTILITY CLASSES
+    ======================================== */
+    .section-hidden { display: none !important; }
+
+    /* ========================================
        CSS CUSTOM PROPERTIES
     ======================================== */
     :root {
@@ -1907,7 +1912,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Construction professionals reviewing blueprints" loading="lazy">
+          <img src="images/about-hero.jpg" alt="Professional cleaning window with safety gear" loading="lazy" style="object-position: center 20%;">
           <div class="experience-badge">
             <div class="num">25</div>
             <div class="label">Years of<br>Experience</div>
@@ -1920,8 +1925,8 @@
           <p>From residential developments to large-scale commercial projects, we approach every build with the same commitment to quality, safety, and client satisfaction.</p>
           <div class="about-stats">
             <div class="about-stat-box">
-              <div class="stat-num">29</div>
-              <div class="stat-label">Years Experience</div>
+              <div class="stat-num">98%</div>
+              <div class="stat-label">Client Satisfaction</div>
             </div>
             <div class="about-stat-box">
               <div class="stat-num">180+</div>
@@ -2230,7 +2235,7 @@
   </section>
 
   <!-- ============ PRICING ============ -->
-  <section class="pricing-section" id="pricing">
+  <section class="pricing-section section-hidden" id="pricing">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Our Pricing</span>
